@@ -1,4 +1,4 @@
-# STAC Analysis Annotations
+# Library for STAC Analysis Annotations
 
 [![Build Status][1]][2]
 
