@@ -1,5 +1,9 @@
 # STAC Analysis Annotations
 
+[![Build Status][1]][2]
+
+[1]: https://travis-ci.com/utopia-group/stac-annotations.svg?token=k4yWxxnayJzRvM74ZNks&branch=master
+[2]: https://travis-ci.com/utopia-group/stac-annotations
 
 ## Introduction
 
