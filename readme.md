@@ -45,7 +45,7 @@ analysis. None of them affects the run-time behavior of the program.
 
    To restrict the size of a given input we propose calls to a designated method
    `STAC.assume` with an empty body that takes a boolean condition as input (e.g., `x <
-   10000`). An analysis will be able assume the input condition to hold.
+   10000`). An analysis will be able to assume the input condition to hold.
 
 ### Identification of entry methods and analysis type
 
@@ -65,8 +65,8 @@ analysis. None of them affects the run-time behavior of the program.
    - The parameter `s` is a user input (see line 10).
    - The size of the input `s` is less than 64 (see line 12).
    - The analysis can start at the beginning of method `verifyPassword` and can stop at
-     the end of that method (see line 8).
-
+     the end of that method (see line 8). The analysis should check for confidentiality
+     vulnerabilities with respect to time.
 
 ``` Java
 import edu.utexas.stac.Check;
