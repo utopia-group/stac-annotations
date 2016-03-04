@@ -1,0 +1,6 @@
+/*~
+/.gradle
+/bin
+.nfs00*
+.idea
+*.iml
