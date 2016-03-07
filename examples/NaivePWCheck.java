@@ -1,4 +1,5 @@
 import edu.utexas.stac.Check;
+import edu.utexas.stac.Checks;
 import edu.utexas.stac.STAC;
 
 public class NaivePWCheck {
@@ -8,7 +9,8 @@ public class NaivePWCheck {
         this.password = password;
     }
 
-    @Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME)
+
+    @Checks({@Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME), @Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.SPACE)})
     public boolean verifyPassword(final String s) {
         STAC.makeUserInput(s);
         STAC.makeSecretInput(this.password);
