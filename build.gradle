@@ -1,13 +1,39 @@
 group 'utexas.edu'
 
-apply plugin: 'java'
+allprojects {
+    apply plugin: 'java'
 
-sourceCompatibility = 1.5
+    repositories {
+        mavenCentral()
+    }
 
-repositories {
-    mavenCentral()
+    sourceCompatibility = 1.5
+
+    targetCompatibility = 1.5
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+project(':src') {
+    sourceSets {
+        main {
+            java {
+                srcDir '.'
+            }
+        }
+    }
+
+    archivesBaseName = "stac-annotations"
+}
+
+project(':examples') {
+    dependencies {
+        compile project(':src')
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir '.'
+            }
+        }
+    }
 }
