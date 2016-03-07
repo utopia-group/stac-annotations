@@ -37,7 +37,7 @@ run-time behavior of the program.
 
 ### Identification of entry methods and analysis type
 
-   By identifying an entry method for the analysis, a user will be able to select a
+   By identifying an entry method for the analysis, a user is able to select a
    "scope" (i.e., start and end) for the analysis. This will allow the analysis to only
    focus on the entry method and its callees. To annotate such methods we propose to
    annotate the method with a custom `@Check` Java annotation. This annotation also takes
