@@ -5,29 +5,17 @@
 [1]: https://travis-ci.com/utopia-group/stac-annotations.svg?token=k4yWxxnayJzRvM74ZNks&branch=master
 [2]: https://travis-ci.com/utopia-group/stac-annotations
 
-## Introduction
-
-Analyzing the challenge programs that were proposed in the first engagement currently
-requires a substantial amount of manual effort. For instance, for each question it is
-necessary to consult the description and question to determine which parts of the system
-are secret and which parts are controlled by the user, including to what extent (e.g.,
-bounds on the size of inputs).
-
-This human component makes it hard to automate the analysis and even harder to compare
-results between independent teams since the description may not be fully unambiguous and,
-more importantly, understanding it may require some insights from inspecting the code. We
-propose a set of lightweight annotations that all teams can use as inputs for their
-tools. An additional benefit of our annotations is that software engineers will be able to
-use them to detect vulnerabilities related to space/time resource usage, resulting in more
-immediate effects on industry best-practices.
-
+This library provides a set of lightweight annotations for specifying program properties
+concerning its space/time usage (see [DARPA STAC
+program](http://www.darpa.mil/program/space-time-analysis-for-cybersecurity)). These
+properties can be checked by automatic space/time analyses.
 
 ## Annotations
 
-Our annotations cover all four crucial parameters for analyzing challenge programs: 1)
+The library provides annotations for all four space/time analysis parameters: 1)
 identification of secret inputs, 2) identification of user-inputs, 3) restriction of
-inputs based on bounds in the questions, and 4) identification of entry methods for the
-analysis. None of them affects the run-time behavior of the program.
+inputs, and 4) identification of entry methods for the analysis. None of them affects the
+run-time behavior of the program.
 
 ### Identification of secret inputs
 
@@ -52,9 +40,10 @@ analysis. None of them affects the run-time behavior of the program.
    By identifying an entry method for the analysis, a user will be able to select a
    "scope" (i.e., start and end) for the analysis. This will allow the analysis to only
    focus on the entry method and its callees. To annotate such methods we propose to
-   annotate the method with a custom `@Check` Java annotation. This annotation also
-   takes arguments for the type of analysis (confidentiality or vulnerability) and the
-   type of resource (space or time).
+   annotate the method with a custom `@Check` Java annotation. This annotation also takes
+   arguments for the type of analysis (confidentiality or vulnerability) and the type of
+   resource (space or time). We support multiple such annotations via a custom `@Checks`
+   Java annotation.
 
 ### Example
 
