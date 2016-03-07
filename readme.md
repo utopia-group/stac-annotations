@@ -6,7 +6,7 @@
 [2]: https://travis-ci.com/utopia-group/stac-annotations
 
 This library provides a set of lightweight annotations for specifying program properties
-concerning its space/time usage (see [DARPA STAC
+concerning space/time usage (see [DARPA STAC
 program](http://www.darpa.mil/program/space-time-analysis-for-cybersecurity)). These
 properties can be checked by automatic space/time analyses.
 
