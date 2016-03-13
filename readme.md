@@ -50,11 +50,11 @@ run-time behavior of the program.
    Method `verifyPassword` in the class below demonstrates how these annotations can be
    used in practice. In particular, an analysis is able to rely on the following:
 
-   - The object `this.password` is a secret input (see line 11).
-   - The parameter `s` is a user input (see line 10).
-   - The size of the input `s` is less than 64 (see line 12).
+   - The object `this.password` is a secret input (see line 13).
+   - The parameter `s` is a user input (see line 14).
+   - The size of the input `s` is less than 64 (see line 15).
    - The analysis can start at the beginning of method `verifyPassword` and can stop at
-     the end of that method (see line 8). The analysis should check for confidentiality
+     the end of that method (see line 11). The analysis should check for confidentiality
      vulnerabilities with respect to time.
 
 ``` Java
@@ -70,8 +70,8 @@ public class NaivePWCheck {
 
     @Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME)
     public boolean verifyPassword(final String s) {
-        STAC.makeUserInput(s);
         STAC.makeSecretInput(this.password);
+        STAC.makeUserInput(s);
         STAC.assume(s.length() < 64);
         for (int i = 0; i < s.length(); ++i) {
             if (i >= this.password.length() ||

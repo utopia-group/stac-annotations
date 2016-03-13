@@ -12,8 +12,8 @@ public class NaivePWCheck {
 
     @Checks({@Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME), @Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.SPACE)})
     public boolean verifyPassword(final String s) {
-        STAC.makeUserInput(s);
         STAC.makeSecretInput(this.password);
+        STAC.makeUserInput(s);
         STAC.assume(s.length() < 64);
         for (int i = 0; i < s.length(); ++i) {
             if (i >= this.password.length() ||
