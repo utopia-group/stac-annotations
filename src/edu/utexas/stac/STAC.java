@@ -1,6 +1,6 @@
 package edu.utexas.stac;
 
-public class STAC {
+public final class STAC {
 
     public static void makeSecretInput(Object input) {
     }
