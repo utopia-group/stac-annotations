@@ -21,6 +21,6 @@ public @interface Check {
     }
 
     public enum Resource {
-        SPACE, TIME
+        SPACE, TIME, FILE
     }
 }
