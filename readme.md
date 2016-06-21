@@ -48,15 +48,7 @@ run-time behavior of the program.
 ### Example
 
    Method `verifyPassword` in the class below demonstrates how these annotations can be
-   used in practice. In particular, an analysis is able to make use of the following:
-
-   - `STAC.makeSecretInput(this.password)` indicates that the object `this.password` is a secret input.
-   - `STAC.makeUserInput(s)` indicates that the parameter `s` is a user input.
-   - `STAC.assume(s.length() < 64)` indicates that size of the input `s` is less than 64.
-   - `@Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME)`
-     indicates that an analysis can start at the beginning of method `verifyPassword` and
-     can stop at the end of that method. It also indicates that the user is interested in
-     checking for confidentiality vulnerabilities with respect to time.
+   used in practice.
 
 ``` Java
 import edu.utexas.stac.Check;
@@ -89,3 +81,13 @@ public class NaivePWCheck {
     }
 }
 ```
+
+   In particular, an analysis is able to make use of the following:
+
+   - `STAC.makeSecretInput(this.password)` indicates that the object `this.password` is a secret input.
+   - `STAC.makeUserInput(s)` indicates that the parameter `s` is a user input.
+   - `STAC.assume(s.length() < 64)` indicates that size of the input `s` is less than 64.
+   - `@Check(analysis = Check.Analysis.CONFIDENTIALITY, resource = Check.Resource.TIME)`
+     indicates that an analysis can start at the beginning of method `verifyPassword` and
+     can stop at the end of that method. It also indicates that the user is interested in
+     checking for confidentiality vulnerabilities with respect to time.
