@@ -2,8 +2,8 @@
 
 [![Build Status][1]][2]
 
-[1]: https://travis-ci.com/utopia-group/stac-annotations.svg?token=k4yWxxnayJzRvM74ZNks&branch=master
-[2]: https://travis-ci.com/utopia-group/stac-annotations
+[1]: https://travis-ci.org/utopia-group/stac-annotations.svg?branch=master
+[2]: https://travis-ci.org/utopia-group/stac-annotations
 
 This library provides a set of lightweight annotations for specifying program properties
 concerning space/time usage (see [DARPA STAC
